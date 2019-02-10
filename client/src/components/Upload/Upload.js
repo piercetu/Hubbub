@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FileUpload from 'react-file-base64';
 import axios from 'axios';
-import { db, storage } from '../../config/firebase.js';
+import { storage } from '../../config/firebase.js';
 
 export default class Upload extends Component {
     constructor(props) {
