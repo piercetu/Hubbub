@@ -26,10 +26,10 @@
 .bgColor { 
   background-color: #282c34;
   display: flex;
-  /* flex: 1; */
+  flex: 1;
   min-height: 100vh;
-  position: relative;
-  flex-direction: column;
+  /* position: relative; */
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
 }
@@ -42,23 +42,48 @@
   display: relative; */
 }
 
-.image-container {
-  
-}
-
 .image-picture {
   z-index: 1;
-  left:115px;
-  top:20px;
   position: absolute;
+  top: 100px;
+  left: 40%;
 }
 
 .image-gif {
   z-index: 2;
-  left:0px;
-  top:0px;
   position: absolute;
+  top: 70px;
+  left: 33%;
 }
+
+.image-picture1 {
+  z-index: 1;
+  position: absolute;
+  top: 68.7vh;
+  left: 70%;
+}
+
+.image-gif1 {
+  z-index: 2;
+  position: absolute;
+  top: 58%;
+  left: 55%;
+}
+
+.image-picture2 {
+  z-index: 1;
+  position: absolute;
+  top: 68.7vh;
+  left: -2vh;
+}
+
+.image-gif2 {
+  z-index: 2;
+  position: absolute;
+  top: 58%;
+  left: 12%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
