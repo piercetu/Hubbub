@@ -11,17 +11,12 @@ export default class Upload extends Component {
     }
 
     handleSubmit = file => {
-        axios.post('http://localhost:8000/hubbub/analyze-audio', 
-        { 
+        axios.post('http://localhost:8000/hubbub/analyze-audio', { 
             file: file.base64,
             time: Date.now()
-        },{
-            headers: {
-              'Content-Type': 'multipart/form-data'
-            }
         })
             .then(res => {
-                alert(res);
+                alert(res.data.msg);
             })
             .catch(err => {
                 console.log(err);
