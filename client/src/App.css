@@ -23,15 +23,28 @@
   color: #61dafb;
 }
 
+#home { 
+  background-image: url('./resources/violin.jpeg');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  outline: 1px solid white;
+  outline-offset: -10px; 
+}
+
 .bgColor { 
-  background-color: #282c34;
+  background-color: rgba(0, 0, 0, 0.6);
+
   display: flex;
   flex: 1;
-  min-height: 100vh;
+  min-height: 95vh;
   /* position: relative; */
   /* flex-direction: column; */
   align-items: center;
   justify-content: center;
+  color: white;
 }
 
 .button-container {
@@ -40,6 +53,8 @@
   align-items: center;
   justify-content: center;
   display: relative; */
+  width: 300px;
+  height: 100px;
 }
 
 .image-picture {
@@ -55,22 +70,22 @@
   top: 70px;
   left: 33%;
 }
-
+/* 
 .image-picture1 {
   z-index: 1;
   position: absolute;
   top: 68.7vh;
   left: 70%;
-}
+} */
 
-.image-gif1 {
+.image-png {
   z-index: 2;
   position: absolute;
-  top: 58%;
-  left: 55%;
+  top: 7.4%;
+  left: 0%;
 }
 
-.image-picture2 {
+/* .image-picture2 {
   z-index: 1;
   position: absolute;
   top: 68.7vh;
@@ -82,6 +97,72 @@
   position: absolute;
   top: 58%;
   left: 12%;
+} */
+
+.navbar {
+  font-family: Sarabun;
+}
+
+.navbar-item { 
+  font-size: 26px;
+  padding: .5rem .75rem;
+}
+.bgc {
+  background-color: rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
+  padding: 80px 5px;
+}
+
+#details {
+  
+  /* background-color: #222222; */
+  background-image: url('./resources/sjsu.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: fixed;
+  background-attachment: fixed; 
+  color: white;
+}
+
+#details h1 {
+  text-align: center;
+  color: white;
+  font-size: 60px;
+}
+
+#details h2 {
+  text-align: left;
+  color: white;
+  font-size: 35px;
+  padding-bottom: 8px;
+}
+
+#details h3 {
+  text-align: left;
+  color: white;
+  font-size: 20px;
+  padding-bottom: 15px;
+}
+
+#about {
+  padding: 80px 5px;
+  /* background-image: url('./resources/sjsu.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: fixed; */
+  background-color: #222222;
+  color: white;
+}
+
+#about h1 {
+  text-align: center;
+  color: white;
+  font-size: 60px;
+  padding-bottom: 20px;
+}
+
+#about h3 {
+  font-size: 25px;
 }
 
 @keyframes App-logo-spin {
