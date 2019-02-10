@@ -2,10 +2,11 @@ from django.http import JsonResponse
 import json
 import base64
 from pyAudioAnalysis import audioTrainTest as aT
+import os, sys
 
 def train_model():
-    train = aT.featureAndTrain(["training/guitar","classifierData/piano"], 1.0, 1.0, aT.shortTermWindow, aT.shortTermStep, "svm", "instrumentClassifier", False)
-    print(train)
+    subfolders = [f.path for f in os.scandir(sys.path[0] + '/training') if f.is_dir() ] 
+    train = aT.featureAndTrain(subfolders[0], 1.0, 1.0, aT.shortTermWindow, aT.shortTermStep, "svm", "instrumentClassifier", False)
 
 def analyze_audio(request):
     if request.method == 'POST':
@@ -37,5 +38,27 @@ def analyze_audio(request):
         'msg': 'Invalid request made, try again'
     })
 
+def prep_training_data():
+    import os, sys, shutil
+    d = {
+        'cel': 'cello',
+        'cla': 'clarinet',
+        'flu': 'flute',
+        'gac': 'acoustic guitar',
+        'gel': 'electric guitar',
+        'org': 'organ',
+        'pia': 'piano',
+        'sax': 'saxophone',
+        'tru': 'trumpet',
+        'vio': 'violin'
+    }
+
+    for file in os.listdir('./training'):
+        if file[-4:] == '.txt':
+            with open('./training/' + file, 'r') as infile:
+                shutil.move(sys.path[0] + '/training/' + file[:-4] + '.wav', sys.path[0] + '/training/' + d.get(infile.readline().strip(), 'cello') + '/' + file[:-4] + '.wav')  
+                infile.close()
+
 if __name__ == '__main__':
+    prep_training_data()
     train_model()
