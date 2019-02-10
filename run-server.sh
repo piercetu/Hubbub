@@ -1,3 +1,3 @@
 cd server
 pip install -r requirements.txt
-python manage.py runserver
+python3 manage.py runserver
